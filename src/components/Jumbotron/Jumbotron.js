@@ -1,30 +1,77 @@
 import React from 'react';
-import styled from 'styled-components'
+import { Container, Inner, Item, InnerContainer, Title, SubTitle, Image } from './styles/Jumbotron'
 
-const Inner = styled.div`
-    display: flex;
-    align-items:center;
-    flex-direction: ${({ direction }) => direction};
-    justify-content: space-between;
-    max-width: 1100px;
-    margin:auto;
-    width:100%;
 
-    @media (max-width: 1000px) {
-        flex-direction: column;
-    }
-`;
 
 const Jumbotron = ({ children, direction = 'row', ...restProps}) => {
 
     return(
-        <Inner
-            direction={direction}
-        >
-            <p>Hello Man</p>
-        </Inner>
+        <Item>
+            <Inner
+                direction={direction}
+            >
+                {children}
+            </Inner>
+        </Item>
+        
         
     )
 }
 
 export default Jumbotron
+
+const JumbotronContainer = ({ children, ...restProps }) => {
+    return(
+        <Container
+            {...restProps}
+        >
+            {children}
+        </Container>
+    )
+}
+
+Jumbotron.Container = JumbotronContainer;
+
+const JumbotronInnerContainer = ({ children, ...restProps }) => {
+    return(
+        <InnerContainer
+            {...restProps}
+        >
+            {children}
+        </InnerContainer>
+    )
+}
+
+Jumbotron.InnerContainer = JumbotronInnerContainer;
+
+const JumbotronTitle = ({ children, ...restProps }) => {
+    return(
+        <Title
+            {...restProps}
+        >
+            {children}
+        </Title>
+    )
+}
+
+Jumbotron.Title = JumbotronTitle;
+
+const JumbotronSubTitle = ({ children, ...restProps }) => {
+    return(
+        <SubTitle
+            {...restProps}
+        >
+            {children}
+        </SubTitle>
+    )
+}
+
+Jumbotron.SubTitle = JumbotronSubTitle;
+
+const JumbotronImage = ({ ...restProps }) => {
+    return(
+        <Image {...restProps} />
+    )
+}
+
+Jumbotron.Image = JumbotronImage;
