@@ -5,7 +5,6 @@ import 'normalize.css';
 import { GlobalStyles } from './global-styles';
 import { firebase } from './lib/firebase/Firebase.prod';
 import { FirebaseContext } from './context/Firebase/FirebaseContext';
-// import { firebase } from './lib/firebase/Firebase.prod';
 
 ReactDOM.render(
   <>
